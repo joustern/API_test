@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Weather_test.Models.Weather>
+
+@{
+    ViewData["Title"] = "ShowData3";
+}
+
+<h1>ShowData3</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.records.locations[0].location[0].locationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.records.locations[0].location[0].lat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    @foreach (var temp in item.records.locations[0].location)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => temp.locationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => temp.lat)
+                @Html.DisplayFor(modelItem => temp.lon)
+            </td>
+            <td>
+                @*Html.DisplayFor(modelItem => temp.weatherElement[0])*@
+            </td>
+        </tr>
+        }
+    }
+    </tbody>
+</table>

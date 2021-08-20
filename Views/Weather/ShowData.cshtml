@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Weather_test.Models.Weather>
+
+@{
+    ViewData["Title"] = "ShowData";
+}
+
+<h1>ShowData</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*Html.DisplayNameFor(model => model.locationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.geocode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lon)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @*Html.DisplayFor(modelItem => item.locationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.geocode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lon)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
